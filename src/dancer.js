@@ -3,6 +3,8 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.time = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>'); // changed 'dancer' to 'this'
+  this.$zombieNode = $('<img id="zombie" src="https://media.giphy.com/media/LcUduIyV4ee2s/giphy.gif">');
+  this.$skeletonNode = $('<img id="skeleton" src="https://thumbs.gfycat.com/FluidPlayfulHeterodontosaurus-max-1mb.gif">');
   // this.step = this.step.bind(this); // what do we do with this? changed 'dancer' to 'this'
   this.step();
   this.setPosition(top, left);
@@ -23,6 +25,8 @@ Dancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings); // changed 'dancer' to 'this' before .$node
+  this.$zombieNode.css(styleSettings);
+  this.$skeletonNode.css(styleSettings);
 };
 
 // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote

@@ -1,4 +1,5 @@
 var SkeletonDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<img id="skeleton" src="https://thumbs.gfycat.com/FluidPlayfulHeterodontosaurus-max-1mb.gif">');
   Dancer.call(this, top, left, timeBetweenSteps);
 };
 

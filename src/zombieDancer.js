@@ -1,4 +1,5 @@
 var ZombieDancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<img id="zombie" src="https://media.giphy.com/media/LcUduIyV4ee2s/giphy.gif">');
   Dancer.call(this, top, left, timeBetweenSteps);
 };
 

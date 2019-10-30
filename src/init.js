@@ -28,42 +28,32 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
-    window.dancers.push(dancer.$node);
+    console.log(dancer);
+    window.dancers.push(dancer);
+    console.log(window.dancers);
+    console.log(window);
   });
 
-
-  $('.addZombieDancer').on('click', function(event) {
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
-    // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    // make a dancer with a random position
-
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    $('body').append(dancer.$zombieNode);
-    window.dancers.push(dancer.$zombieNode);
+  $('.lineUp').on('click', function() {
+    var leftPos = 450;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].$node.css({
+        // width: '50px'
+        top: '250px',
+        left: `${leftPos}px`
+      });
+      leftPos += 50;
+    }
   });
 
-  $('.addSkeletonDancer').on('click', function(event) {
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
-    // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    // make a dancer with a random position
-
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    $('body').append(dancer.$skeletonNode);
-    window.dancers.push(dancer.$skeletonNode);
+  $('.tiny').on('click', function() {
+    var leftPos = 450;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].$node.css({
+        width: '50px'
+      });
+      leftPos += 50;
+    }
   });
 });
 
